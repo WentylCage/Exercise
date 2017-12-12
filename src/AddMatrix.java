@@ -1,8 +1,7 @@
 public class AddMatrix {
 
-    public double[][] add ()
+    public double[][] add () {
 
-    {
         System.out.println("MATRIX ADDITION");
         double[][] matrix1;
         double[][] matrix2;
@@ -14,19 +13,19 @@ public class AddMatrix {
         ReadMatrix readmatrix2 = new ReadMatrix();
         matrix2 = readmatrix2.read();
         matrixr = readmatrix2.read();
-        if (matrix1.length==matrix2.length)
-        {
-            for(int i = 0; i<matrix1.length; i++)
-            {
-                for(int j = 0; j<matrix1[i].length; j++)
-                {
+        if (matrix1.length==matrix2.length) {
+            for(int i = 0; i<matrix1.length; i++) {
+                for(int j = 0; j<matrix1[i].length; j++) {
                     matrixr[i][j] = matrix1[i][j]+matrix2[i][j];
                 }
             }
+            PrintMatrix print = new PrintMatrix();
+            print.print(matrixr);
         }
-        else
-        {
-            System.out.println("Tables have different dimensions. Addition aborted");
+        else {
+            System.out.println("Tables have different dimensions. Addition aborted. Try one more time");
+            AddMatrix back = new AddMatrix();
+            back.add();//Next try
         }
         return matrixr; //I will use it for possible print
     }

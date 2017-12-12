@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class ReadMatrix {
 
-    public double[][] read()
-    {
+    public double[][] read() {
         int columnno; //columns quantity
         int lineno; //lines quantity
         Scanner input = new Scanner(System.in);
@@ -14,11 +13,10 @@ public class ReadMatrix {
         columnno = input.nextInt();
         double[][] matrix = new double[lineno][columnno];
         System.out.println("Enter matrix, number after number");
-        for(int i = 0; i<matrix.length; i++)
-        {
-            System.out.println("Enter" + i++ + "line");
-            for(int j = 0; j<matrix[i].length; j++)
-            {
+        for(int i = 0; i<matrix.length; i++) {
+            int p = i+1;
+            System.out.println("Enter" + p + "line");
+            for(int j = 0; j<matrix[i].length; j++) {
                 matrix[i][j] = input.nextDouble();
                 System.out.print(" ");
             }
